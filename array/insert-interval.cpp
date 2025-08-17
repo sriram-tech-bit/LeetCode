@@ -15,9 +15,9 @@ public:
                 ans.push_back(newInterval);
                 for(int j=i;j<intervals.size();j++){
                      ans.push_back(intervals[j]);
-                     return ans;
+                     
                 }
-
+                       return ans;
                }
            }
            else{
