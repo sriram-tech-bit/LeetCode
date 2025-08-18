@@ -8,12 +8,10 @@ public:
                 if(index<0 || index>=nums.size()){
                     break;
                 }
-                if(nums[i]==i+1){
+                if(nums[i]==nums[index]){
                     break;
                 }
-                int temp=nums[index];
-                nums[index]=nums[i];
-                nums[i]=temp;
+                swap(nums[i],nums[index]);
             }
         }
         for(int i=0;i<nums.size();i++){
