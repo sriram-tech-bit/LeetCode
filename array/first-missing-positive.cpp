@@ -4,10 +4,11 @@ public:
         for(int i=0;i<nums.size();i++){
             while(nums[i]!=i+1){
                 int x=nums[i];
-                int index=x-1;
-                if(index<0 || index>=nums.size()){
+                
+                if(x<=0 || x>nums.size()){
                     break;
                 }
+                int index=x-1;
                 if(nums[i]==nums[index]){
                     break;
                 }
