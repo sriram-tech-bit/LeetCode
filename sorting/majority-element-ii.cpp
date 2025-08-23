@@ -11,9 +11,15 @@ public:
       int freq1=1;
       int freq2=1;
       if(nums.size()==2){
+        if(ele1!=ele2){
           temp.push_back(ele1);
           temp.push_back(ele2);
           return temp;
+      }
+      else{
+       temp.push_back(ele2);
+          return temp;
+      }
       }
       int count=0;
       for(int i=1;i<nums.size();i++){
