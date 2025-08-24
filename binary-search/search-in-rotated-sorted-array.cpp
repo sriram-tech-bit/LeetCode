@@ -17,11 +17,11 @@ public:
           }
       }
       else{
-            if(target<=arr[mid] && target<=arr[arr.size()-1]){
-                high=mid-1;
+            if(target>=arr[mid] && target<=arr[arr.size()-1]){
+                low=mid+1;
             }
             else{
-                low=mid+1;
+               high=mid-1;
             }
 
       }
