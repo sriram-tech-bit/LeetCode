@@ -9,7 +9,7 @@ public:
             return mid;
            } 
        if(arr[mid]>=arr[0]){
-          if(target>arr[0] && target<arr[mid]){
+          if(target>=arr[0] && target<=arr[mid]){
              high=mid-1;
           }
           else{
@@ -17,7 +17,7 @@ public:
           }
       }
       else{
-            if(target<=arr[mid] && target<arr[arr.size()-1]){
+            if(target<=arr[mid] && target<=arr[arr.size()-1]){
                 high=mid-1;
             }
             else{
