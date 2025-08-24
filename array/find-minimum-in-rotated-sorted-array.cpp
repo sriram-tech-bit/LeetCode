@@ -9,7 +9,7 @@ public:
             if(arr[mid]<ans){
                 ans=arr[mid];
             }
-           if(arr[mid]>arr[0] && arr[mid]>arr[arr.size()-1]){
+           if(arr[mid]>=arr[0] && arr[mid]>=arr[arr.size()-1]){
              low=mid+1;
            }
            else{
