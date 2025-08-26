@@ -24,9 +24,9 @@ public:
     }
 
   bool check(vector<int>&arr,int mid,int k){
-        int sum=0;
-        for(int i=0;i<arr.size();i++){
-            int res=(arr[i]+mid-1)/mid;
+        long sum=0;
+        for(long i=0;i<arr.size();i++){
+            long res=(arr[i]+mid-1)/mid;
             sum+=res;
         }
         if(sum<=k){
