@@ -4,12 +4,12 @@ public:
     int n=arr.size();
 
     sort(arr.begin(),arr.end());
-    int low=arr[0];
+    int low=1;
     int high=arr[n-1];
     int ans=INT_MAX;
            while(low<=high){
             int mid=(low+high)/2;
-            if(mid<ans){
+           
             if(check(arr,mid,k)){
                 ans=mid;
                high=mid-1;
@@ -17,7 +17,7 @@ public:
               else{
               low=mid+1;
                }
-            }
+            
             
            } 
            return ans;
