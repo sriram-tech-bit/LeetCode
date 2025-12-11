@@ -12,41 +12,23 @@
 class Solution {
 public:
     bool isSameTree(TreeNode* p, TreeNode* q) {
-                vector<int>sol;
-                vector<int>sol2;
-            helper(p,sol);
-            helper1(q,sol2); 
-            
-            for(int i=0;i<sol.size() && sol2.size();i++){
-                if(sol[i]!=sol2[i]){
-                    return false;
-                     
-                }
-            }    
+           if(p==nullptr &&q==nullptr ) {
             return true;
-       
+           }     
+         if(p==nullptr || q==nullptr){
+            return false;
+         }
+         
+         if(p->val!=q->val){
+            return false;
+         }
+         
+      return   isSameTree(p->left,q->left);
+      return   isSameTree(p->right,q->right);
+           
+
 
     }
-      void helper(TreeNode*p,vector<int>&sol){
-           if(p==nullptr){
-            sol.push_back(INT_MAX);
-            return ;
-           }
-            sol.push_back(p->val);
-           helper(p->left,sol);
-           helper(p->right,sol);
-      }
-       void helper1(TreeNode*p,vector<int>&sol2){
-           if(p==nullptr){
-            sol2.push_back(INT_MAX);
-            return ;
-           }
-            sol2.push_back(p->val);
-           helper1(p->left,sol2);
-           helper1(p->right,sol2);
-      }
-
-      
 
 
 
