@@ -29,7 +29,7 @@ public:
     }
       void helper(TreeNode*p,vector<int>&sol){
            if(p==nullptr){
-            sol.push_back(0);
+            sol.push_back(-1);
             return ;
            }
             sol.push_back(p->val);
@@ -38,7 +38,7 @@ public:
       }
        void helper1(TreeNode*p,vector<int>&sol2){
            if(p==nullptr){
-            sol2.push_back(0);
+            sol2.push_back(-1);
             return ;
            }
             sol2.push_back(p->val);
