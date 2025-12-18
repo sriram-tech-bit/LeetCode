@@ -4,21 +4,20 @@ class Solution {
     String res="";
    
     for(String s:words){
-     boolean flag=false;
-     char ws=s.charAt(0);
+     
+      String replaced=s;
+      int n=Integer.MAX_VALUE;
      for(String k:dictionary){
-         char ds =k.charAt(0);
-        if(s.contains(k)==true && ws==ds ){
-          res+=k+" ";
-          flag=true;
-          break;
-         
+        
+        if(s.startsWith(k)==true && k.length()<n ){
+            n=k.length();
+            replaced=k;
         }
         
      }
-     if(flag==false){
-        res+=s+" ";
-     }
+     
+        res+=replaced+" ";
+     
 
     }
          
