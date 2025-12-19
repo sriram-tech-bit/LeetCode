@@ -13,9 +13,9 @@ public:
         int hashval=0;
         int p=1;
           for(int j=0;j<subs.size();j++){
-            
+
             hashval=(hashval+hv(subs[j])*p)%modulo;
-            p=p*power;
+            p=(p*power)%modulo;
             
           }
           
