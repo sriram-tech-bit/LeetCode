@@ -15,7 +15,7 @@ public:
         if(sol[i]==true ){
            sum+=i;
         }
-        if(sum<=n){
+        if(sum<=n && sol[sum]==true){
              ans=sum;
         }
 
