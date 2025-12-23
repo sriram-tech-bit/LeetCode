@@ -11,9 +11,9 @@ public:
          ques.pop();
          int top2=ques.top();
          ques.pop();
-        if(top1!=top2){
+        
            ques.push(top1-top2);
-        }
+        
      }
     return ques.top();
 
