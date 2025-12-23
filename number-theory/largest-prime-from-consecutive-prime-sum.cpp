@@ -9,8 +9,8 @@ public:
              }
            }
         }
-        int sum=0;
-        int ans=0;
+        long long sum=0;
+        long long ans=0;
      for(int i=2;i<=n;i++) {
         if(sol[i]==true ){
            sum+=i;
