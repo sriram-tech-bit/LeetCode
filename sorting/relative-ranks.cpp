@@ -5,7 +5,11 @@ public:
         for(auto k:score){
             q.push(k);
         }
+         if(q.size()==1){
+            return {"Gold Medal"};
+         }
         vector<pair<int,string>>vec;
+        if(q.size()>=3){
            q.top();
            
            vec.push_back({q.top(),"Gold Medal"});
@@ -16,6 +20,18 @@ public:
            q.top();
            vec.push_back({q.top(),"Bronze Medal"});
            q.pop();
+
+        }else{
+            q.top();
+           
+           vec.push_back({q.top(),"Gold Medal"});
+           q.pop();
+           q.top();
+           vec.push_back({q.top(),"Silver Medal"});
+           q.pop();
+
+        }
+
            int i=4;
       while(q.size()>0){
          q.top();
