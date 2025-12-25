@@ -8,26 +8,26 @@ public:
          if(q.size()==1){
             return {"Gold Medal"};
          }
-        vector<pair<int,string>>vec;
+        unordered_map<int,string>hm;
         if(q.size()>=3){
            q.top();
            
-           vec.push_back({q.top(),"Gold Medal"});
+           hm.insert({q.top(),"Gold Medal"});
            q.pop();
            q.top();
-           vec.push_back({q.top(),"Silver Medal"});
+           hm.insert({q.top(),"Silver Medal"});
            q.pop();
            q.top();
-           vec.push_back({q.top(),"Bronze Medal"});
+           hm.insert({q.top(),"Bronze Medal"});
            q.pop();
 
         }else{
             q.top();
            
-           vec.push_back({q.top(),"Gold Medal"});
+           hm.insert({q.top(),"Gold Medal"});
            q.pop();
            q.top();
-           vec.push_back({q.top(),"Silver Medal"});
+           hm.insert({q.top(),"Silver Medal"});
            q.pop();
 
         }
@@ -35,21 +35,16 @@ public:
            int i=4;
       while(q.size()>0){
          q.top();
-         vec.push_back({q.top(),to_string(i)});
+         hm.insert({q.top(),to_string(i)});
          i++;
          q.pop();
       }
-     
-     
       vector<string>res;
-        for(int i=0;i<score.size();i++){
-            for(auto a:vec){
-                if(score[i]==a.first){
-                    res.push_back(a.second);
-                }
-            }
-        }
-     return res;
+     for(auto k:score){
+         res.push_back(hm[k]);
+     }
+      return res;
+     
      
     }
 };
