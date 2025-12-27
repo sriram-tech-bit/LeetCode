@@ -8,7 +8,7 @@ public:
         }
     }
     sort(nums.begin(),nums.end(),greater<int>());
-    int ans=0;
+    long long ans=0;
      if(count==nums.size() || count==0){
          int p1=nums[0];
          int p2=nums[1] ;
