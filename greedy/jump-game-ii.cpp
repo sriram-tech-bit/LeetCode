@@ -12,7 +12,7 @@ public:
             int k=pq.top();
             jumps++;
             pq.pop();
-            if(k==n-1 || k==n){
+            if(k>=n-1){
                 return jumps;
             }
             for(int i=0;i<k;i++){
