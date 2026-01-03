@@ -5,6 +5,9 @@ public:
         priority_queue<int>pq;
         pq.push(nums[0]);
         int jumps=0;
+        if(n==1){
+            return 0;
+        }
          while(pq.size()>0){
             int k=pq.top();
             jumps++;
