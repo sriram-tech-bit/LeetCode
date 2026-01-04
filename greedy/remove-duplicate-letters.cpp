@@ -8,6 +8,8 @@ public:
             hm[s[i]]++;
         }
           for(int i=0;i<s.size();i++){
+            hm[s[i]]--;
+
              if(hs.find(s[i])!=hs.end()){
                continue;
              }
@@ -23,8 +25,7 @@ public:
              }
        st.push(s[i]);
        hs.insert(s[i]);
-       hm[s[i]]--;
-
+       
 
 
           }
