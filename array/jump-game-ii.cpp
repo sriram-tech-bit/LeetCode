@@ -15,7 +15,7 @@ public:
             if(k>=n-1){
                 return jumps;
             }
-            for(int i=0;i<k;i++ && k<nums.size()){
+            for(int i=0;i<=k&&k<nums.size();i++  ){
                 pq.push(i+nums[i]);
             }
          }
