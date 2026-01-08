@@ -5,6 +5,9 @@ public:
       for(int i=0;i<nums.size();i++){
           hs.insert(nums[i]);
       } 
+      if(nums.size()==1){
+        return 1;
+      }
       vector<int>sol;
       for(auto k:hs){
         sol.push_back(k);
