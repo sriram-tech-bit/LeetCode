@@ -1,18 +1,25 @@
 class Solution {
 public:
     int countElements(vector<int>& nums, int k) {
-    if(nums.size()==1){
-        return 1;
-      }
-     unordered_set<int>hs;
+    
+     unordered_map<int,int>hm;
       for(int i=0;i<nums.size();i++){
-          hs.insert(nums[i]);
+         hm[nums[i]]++;
       } 
+       vector<int>sol;
+       if(hm.size()==1){
+        sol.push_back(nums[0]);
+       }
+       else{
+        for(int i=0;i<nums.size();i++){
+            sol.push_back(nums[i]);
+        }
+       }
       
-      vector<int>sol;
-      for(auto m:hs){
-        sol.push_back(m);
-      }
+
+       
+     
+      
       sort(sol.begin(),sol.end());
      int count=0;
      int n=sol.size()-1;
