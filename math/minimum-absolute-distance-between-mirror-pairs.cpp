@@ -21,8 +21,13 @@ public:
                k=k/10;
 
                }
-               hm.insert({num,i});
-
+               if(hm.find(num)!=hm.end()){
+                hm.erase(num);
+                hm.insert({num,i});
+               }
+               else{
+                hm.insert({num,i});
+               }
            }
 
            }
