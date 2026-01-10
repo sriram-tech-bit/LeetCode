@@ -1,20 +1,18 @@
 class Solution {
 public:
     int earliestTime(vector<vector<int>>& tasks) {
- int n=tasks[0].size();
-    int sum1=0;
-     for(int i=0;i<n;i++){
-         sum1+=tasks[0][i];
-     }
-   
-    sort(tasks.begin(),tasks.end(),[](auto &a,auto &b){
-     return a[1]<b[1];
-    });
-   int sum=0;
-     for(int i=0;i<n;i++){
-         sum+=tasks[0][i];
-     }
-     return min(sum,sum1);
+ int n=tasks.size();
+ int m=tasks[0].size();
+    int ans=INT_MAX;  
+   for(int i=0;i<n;i++){
+    int sum=0;
+    for(int j=0;j<m;j++){
+     sum+=tasks[i][j];
         
     }
+    ans=min(sum,ans);
+   }
+   return ans;
+    }
+    
 };
