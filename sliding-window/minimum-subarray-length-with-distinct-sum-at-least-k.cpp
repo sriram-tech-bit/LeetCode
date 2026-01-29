@@ -1,30 +1,43 @@
 class Solution {
 public:
     int minLength(vector<int>& nums, int k) {
+        unordered_map<int,int>hm;
+        int uniquesum=0;
+        int ans=INT_MAX;
         int n=nums.size();
-       int ans=INT_MAX;
-       bool flag=false;
-        vector<int>sol;
-        int sum=0;
-      for(int i=0;i<n;i++){
-          sol.push_back(nums[i]);
-          
-          for(int i=0;i<sol.size();i++){
-              sum+=sol[i];
-          }
-          if(sum>=k){ 
-            int n=sol.size();
-            ans=min(ans,n);
-            
-              sum-=sol[0];
-              flag=true;
-             sol.erase(sol.begin());
-            
-          }
+    int l=0;
+    int r=0;
+    hm[nums[r]]++;
+    uniquesum+=nums[r];
+    while(r<n){
+      if(uniquesum<k){
+         r++;
+         if(r<n){
+         hm[nums[r]]++;
+         if(hm[nums[r]]==1){
+            uniquesum+=nums[r];
+         }
+         }
+
+
+        
+
       }
-      if(flag==false){
-         return -1;
+      while(uniquesum>=k){
+        ans=min(ans,r-l+1);
+           
+           hm[nums[l]]--;
+           if(hm[nums[l]]==0){
+            uniquesum-=nums[l];
+           }
+           l++;
+        
+
       }
-      return ans;
+
+    }
+    return ans;
+
+        
     }
 };
