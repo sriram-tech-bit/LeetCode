@@ -2,6 +2,7 @@ class Solution {
 public:
     vector<vector<int>> permute(vector<int>& nums) {
         vector<vector<int>>ans;
+      sort(nums.begin(),nums.end());
         ans.push_back(nums);
         if(nums.size()==1){
             return ans;
