@@ -9,27 +9,37 @@ public:
       while(r<n && l<n){
      while(r-l+1>k){
         res.push_back(maxdeque.front());
+        if (nums[l] == maxdeque.front()){
+            maxdeque.pop_front();
+        }
+                   
         l++;
 
         }
 
-        
 
 
-     while(maxdeque.size()!=0 && nums[r]>maxdeque.back()){
+      while(maxdeque.size()!=0 && nums[r]>maxdeque.back()){
              maxdeque.pop_back();
          }
          maxdeque.push_back(nums[r]);
 
        
 
+     
+
+        
+
+
+   
+
     
      r++;
       }
 
-      if(r-l+1>k){
+      
         res.push_back(maxdeque.front());
-      }
+      
       return res;
 
     }
