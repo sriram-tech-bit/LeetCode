@@ -39,7 +39,7 @@ public:
        int c=0;
        for(int i=0;i<n;i++){
         for(int j=0;j<m;j++){
-            if(grid[i][j]==2){
+            if(grid[i][j]==2 && vis[i][j]==0){
                c=max(c,bfs(i,j,vis,grid));
             }
         }
