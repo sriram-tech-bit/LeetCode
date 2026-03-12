@@ -11,31 +11,18 @@ public:
             adj[v].push_back(u);
         }
         queue<int>q;
-        for(int i=0;i<n;i++){
-           if(vis[i]==false){
-              if(vis[destination]==true){
-                return true;
-              }
-              c++;
-              q.push(i);
-              vis[i]=true;
-              while(q.size()>0){
-                int u=q.front();
-                q.pop();
-                for(int j=0;j<adj[u].size();j++){
-                    if(vis[adj[u][j]]!=true){
-                         vis[adj[u][j]]=true;
-                         q.push(adj[u][j]);  
-                    }
+        q.push(source);
+        vis[source]=true;
+        while(q.size()>0){
+            int front=q.front();
+            q.pop();
+            for(int i=0;i<adj[front].size();i++){
+                if(vis[adj[front][i]]!=true){
+                    vis[adj[front][i]]=true;
+                    q.push(adj[front][i]);
                 }
-              }
-
-           }
+            }
         }
-        if(c==1){
-            return true;
-        }
-        return false;
-        
-    }
+        return vis[destination];
+    }  
 };
