@@ -1,9 +1,10 @@
 class Solution {
 public:
     bool increasingTriplet(vector<int>& nums) {
-        int left =0;
-        int right=0;
+        
         for(int i=0;i<nums.size();i++){
+            int left =0;
+            int right=0;
        for(int j=0;j<i;j++){
            if(nums[i]>nums[j]){
             left++;
