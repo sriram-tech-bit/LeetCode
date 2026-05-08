@@ -12,14 +12,12 @@ public:
          }
      for(auto k:hm1){
         if(hm2.find(k.first)!=hm2.end()){
-            if(k.second==hm2[k.first]){
-              for(int i=0;i<k.second;i++){
+           int m=min(k.second,hm2[k.first]);
+              for(int i=0;i<m;i++){
                 res.push_back(k.first);
               }   
-            }
-            else{
-                res.push_back(k.first);
-            }
+            
+            
         }
      }
      return res;
