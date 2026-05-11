@@ -16,25 +16,24 @@ public:
             if((fre%2)==0){
                count+=fre;
             }
-           else if(odcount<=1 && (fre%2)!=0){
-              oddfreq=fre;
-              odcount++;
+           else {
+            oddfreq=max(fre,oddfreq); 
            }
             
 
              
         }
-        if( odcount==1 || odcount==0){
-            count+=oddfreq;
-        }
-        else {
-            count+=1;
 
-        }
+
+        
+        
+            
+
+        
         
       
 
-    return count;
+    return count+=oddfreq;
 
     }
 };
