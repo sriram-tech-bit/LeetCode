@@ -8,8 +8,8 @@ public:
 
         }
         int count=0;
-        int odcount=0;
-        int oddfreq=0;
+        
+        bool oddfreq=false;
         for(auto k:hm){
             int fre=k.second;
            
@@ -17,12 +17,14 @@ public:
                count+=fre;
             }
            else {
-            oddfreq=max(fre,oddfreq); 
+            count+=fre-1;
+            oddfreq=true; 
            }
             
 
              
         }
+        if(oddfreq) count++;
 
 
         
@@ -33,7 +35,7 @@ public:
         
       
 
-    return count+=oddfreq;
+    return count;
 
     }
 };
