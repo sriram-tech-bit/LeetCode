@@ -9,24 +9,30 @@ public:
         }
         int count=0;
         int odcount=0;
+        int oddfreq=0;
         for(auto k:hm){
             int fre=k.second;
            
             if((fre%2)==0){
                count+=fre;
             }
-            else{
-              odcount+=fre;   
-            }
+           else if(odcount<=1 && (fre%2)!=0){
+              oddfreq=fre;
+              odcount++;
+           }
+            
 
              
         }
-        if( odcount>=1){
+        if( odcount==1 || odcount==0){
+            count+=oddfreq;
+        }
+        else {
             count+=1;
+
         }
-        else if(odcount==0){
-            count+=odcount;
-        }
+        
+      
 
     return count;
 
