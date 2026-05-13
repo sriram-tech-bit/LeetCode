@@ -8,20 +8,18 @@ public:
        
         while(r<nums.size()){
            sum+=nums[r];
-
            while(sum>k){
              sum-=nums[l];
-             l++;
+              l++;
            }
-           if(sum==k){
+
+           if(sum==k && l<=r){
             count++;
            }
-       r++;
 
-          
-
-
-          }
+           
+           r++;
+       }
 
            return  count;
     
