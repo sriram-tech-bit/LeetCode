@@ -1,8 +1,8 @@
 class Solution {
 public:
     long long zeroFilledSubarray(vector<int>& nums) {
-        int totalc=0;
-        int c=0;
+    long long totalc=0;
+        long long c=0;
         for(int i=0;i<nums.size();i++){
             if(nums[i]==0){
                 c++;
