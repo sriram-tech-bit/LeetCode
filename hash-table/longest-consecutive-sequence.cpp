@@ -5,12 +5,14 @@ public:
         if(n==0){
             return 0;
         }
-        if(n==1){
-            return 1;
-        }
+        
         set<int>s;
+        
         for(int i=0;i<nums.size();i++){
             s.insert(nums[i]);
+        }
+        if(s.size()==1){
+            return 1;
         }
         int c=1;
         int ans=INT_MIN;
