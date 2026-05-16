@@ -1,7 +1,13 @@
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
-        
+        int n=nums.size();
+        if(n==0){
+            return 0;
+        }
+        if(n==1){
+            return 1;
+        }
         set<int>s;
         for(int i=0;i<nums.size();i++){
             s.insert(nums[i]);
@@ -19,7 +25,7 @@ public:
                c++;
            }
            else{
-            c=0;
+            c=1;
            }
            ans=max(ans,c);
 
