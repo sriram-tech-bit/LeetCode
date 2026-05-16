@@ -1,42 +1,28 @@
 class Solution {
 public:
-    void print(int i,vector<int>&sol,vector<vector<int>>&res,int n,vector<pair<int,int>>&f){
-       if(i==n){
-        res.push_back(sol);
-        return ;
-       }
+void print(int i,vector<int>&nums,vector<vector<int>>&res,int n,vector<int>&temp){
+  if(i==n){
+      res.push_back(temp);
+    return ;
+  }
+  temp.push_back(nums[i]);
+  print(i+1,nums,res,n,temp);
+  temp.pop_back();
+  int index=i+1;
+  while(index<n && nums[index]==nums[index-1]) index++;
+  print(index,nums,res,n,temp);
 
-     print(i+1,sol,res,n,f);
-     int ele=f[i].first;
-     int sec=f[i].second;
-      for(int j=0;j<sec;j++){
-        sol.push_back(ele);
-         print(i+1,sol,res,n,f);
-      }
-      for(int j=0;j<sec;j++){
-        sol.pop_back();
-        
-      }
-      return ;
-     
 
-    }
+
+}
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
-       unordered_map<int,int>hm;
-       for(int i=0;i<nums.size();i++){
-        hm[nums[i]]++;
-       }
-       vector<pair<int,int>>f;
-       for(auto k:hm){
-         f.push_back({k.first,k.second});
-
-       }
-       vector<vector<int>>res;
-       vector<int>sol;
-        print(0,sol,res,f.size(),f);
-      return res;
-       
-
+        sort(nums.begin(),nums.end());
+        vector<vector<int>>res;
+        vector<int>temp;
+        int n=nums.size();
+        print(0,nums,res,n,temp);
         
+      return res;
+
     }
 };
