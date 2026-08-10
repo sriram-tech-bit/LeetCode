@@ -17,6 +17,7 @@ class Solution {
             temp=temp.next;
         }
         int n=list.size();
+        if(n==0) return null;
         k=k%n;
         int i=n-k;
         temp=head;
