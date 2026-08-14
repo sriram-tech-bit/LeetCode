@@ -9,34 +9,16 @@
 class Solution {
 public:
     ListNode *detectCycle(ListNode *head) {
-         ListNode *S=head;
-        ListNode *start=cycle(head);
-        if(start==nullptr){
-            return nullptr;
+       unordered_set<ListNode*>hm;
+        ListNode * curr=head;
+        int i=0;
+        while(curr!=nullptr){
+          if(hm.find(curr)!=hm.end()){
+              return curr;
+           }
+           hm.insert(curr);
+           curr=curr->next;
         }
-         while(S!=start){
-            S=S->next;
-            start=start->next;
-         }
-        
-         while(head!=start){
-             head=head->next;
-         }
-
-                 return head;
-    }
-
-
-    ListNode *cycle(ListNode*head){
-        ListNode * s=head;
-        ListNode *f=head;
-          while(f!=nullptr && f->next!=nullptr){
-               s=s->next;
-               f=f->next->next;
-               if(s==f){
-                return s;
-               }
-          }
-          return nullptr;
+         return nullptr;
     }
 };
