@@ -15,6 +15,9 @@ public:
             st.push(s[i]);
          }
         }
+        else{
+            st.push(s[i]);
+        }
          
 
         }
