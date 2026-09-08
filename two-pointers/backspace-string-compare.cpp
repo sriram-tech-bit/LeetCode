@@ -8,7 +8,10 @@ public:
             st.pop();
           }
           else{
-            st.push(s[i]);
+            if(s[i]!='#'){ st.push(s[i]);
+
+            }
+           
           }
 
         }
@@ -17,6 +20,7 @@ public:
             st2.pop();
           }
           else{
+            if(t[i]!='#')
             st2.push(t[i]);
           }
 
