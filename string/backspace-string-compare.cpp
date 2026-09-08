@@ -4,7 +4,7 @@ public:
         stack<char>st;
         stack<int>st2;
         for(int i=0;i<s.size();i++){
-          if(s[i]=='#'){
+          if(!st.empty() &&s[i]=='#'){
             st.pop();
           }
           else{
@@ -13,7 +13,7 @@ public:
 
         }
         for(int i=0;i<t.size();i++){
-          if(t[i]=='#'){
+          if(!st2.empty() &&t[i]=='#'){
             st2.pop();
           }
           else{
